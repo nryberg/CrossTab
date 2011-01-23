@@ -1,0 +1,10 @@
+# Load the rails application
+require File.expand_path('../application', __FILE__)
+
+Rails::Initializer.run do |config|
+  config.gem 'mongomapper', :version => '>= 0.2.1'
+  config.frameworks -= [:active_record]
+end
+# Initialize the rails application
+# Crosstab::Application.initialize!
+

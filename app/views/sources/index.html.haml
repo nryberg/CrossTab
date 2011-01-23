@@ -1,0 +1,15 @@
+%h1 Listing sources
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @sources.each do |source|
+    %tr
+      %td= link_to source, "sources/" + source
+
+%br
+
+= link_to 'New Source', new_source_path

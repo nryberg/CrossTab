@@ -1,0 +1,11 @@
+= form_for @tuple do |f|
+  -if @tuple.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@tuple.errors.count, "error")} prohibited this tuple from being saved:"
+      %ul
+        - @tuple.errors.full_messages.each do |msg|
+          %li= msg
+  f.label :name
+  f.text_field :name
+  .actions
+    = f.submit 'Save'

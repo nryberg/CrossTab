@@ -1,0 +1,17 @@
+%h1 Listing tuples
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @tuples.each do |tuple|
+    %tr
+      %td= link_to 'Show', tuple
+      %td= link_to 'Edit', edit_tuple_path(tuple)
+      %td= link_to 'Destroy', tuple, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Tuple', new_tuple_path
