@@ -1,0 +1,9 @@
+%p#notice= notice
+
+- @database.collections.each do |col|
+  %p= link_to col.name, col
+  
+
+= link_to 'Edit', edit_database_path(@database)
+\|
+= link_to 'Back', databases_path

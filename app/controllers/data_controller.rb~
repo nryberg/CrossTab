@@ -2,11 +2,11 @@ class DataController < ApplicationController
   # GET /data
   # GET /data.xml
   def index
-    @data = Datum.all
+    @datas = Datum.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @data }
+      format.xml  { render :xml => @datas }
     end
   end
 

@@ -1,0 +1,15 @@
+%h1 Listing databases
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @databases.each do |database|
+    %tr
+      %td= link_to database.name, database
+
+%br
+
+= link_to 'New Database', new_database_path

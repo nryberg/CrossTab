@@ -4,7 +4,7 @@
     %th Field
     %th Value
   - @one_row.each do |field|
-    = content_tag_for(:tr, field) do
+    %tr
       %td
         %strong= field[0]
       %td= field[1]

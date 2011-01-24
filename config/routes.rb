@@ -1,5 +1,16 @@
 Crosstab::Application.routes.draw do
-  resources :collections
+  resources :analytics
+
+  resources :types
+
+  resources :tables
+
+  resources :databases do 
+    resources :collections
+  end
+
+  resources :data
+
 
   resources :sources
 

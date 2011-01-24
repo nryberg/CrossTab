@@ -1,9 +1,7 @@
-class Collection
+class Database
   include MongoMapper::Document         
-  key :name, String
-  key :database_id, :typecase => 'ObjectID'
-  
-  one :database
+
+  many :collections
 # Validations :::::::::::::::::::::::::::::::::::::::::::::::::::::
 # validates_presence_of :attribute
 

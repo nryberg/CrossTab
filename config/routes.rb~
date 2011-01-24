@@ -1,6 +1,22 @@
 Crosstab::Application.routes.draw do
-  resources :tuples
+  resources :analytics
+
+  resources :types
+
+  resources :tables
+
+  resources :databases do 
+    resources :collections
+  end
+
+  resources :data
+
+  resources :collections
+
+  resources :sources
+
   root :to => "data#index"
+  resources :tuples
 
 
   

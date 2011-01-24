@@ -1,0 +1,17 @@
+%h1 Listing types
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @types.each do |type|
+    %tr
+      %td= link_to 'Show', type
+      %td= link_to 'Edit', edit_type_path(type)
+      %td= link_to 'Destroy', type, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Type', new_type_path

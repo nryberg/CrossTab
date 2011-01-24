@@ -1,0 +1,18 @@
+%h1 Listing databases
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @databases.each do |database|
+    %tr
+      %td= database.name
+      %td= link_to 'Show', database
+      %td= link_to 'Edit', edit_database_path(database)
+      %td= link_to 'Destroy', database, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Database', new_database_path

@@ -1,9 +1,10 @@
-class Collection
+class Analytic
   include MongoMapper::Document         
-  key :name, String
-  key :database_id, :typecase => 'ObjectID'
-  
-  one :database
+  key :database, String
+  key :collection, String
+  key :column, String
+  key :row, String
+  key :value, String
 # Validations :::::::::::::::::::::::::::::::::::::::::::::::::::::
 # validates_presence_of :attribute
 

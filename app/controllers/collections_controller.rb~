@@ -15,8 +15,9 @@ class CollectionsController < ApplicationController
   # GET /collections/1
   # GET /collections/1.xml
   def show
-    @collection = @database.collection(params[:id])
-
+    @collection = Collection.find(params[:id])
+    @database = MongoMapper.connection.db(@collection.database.name)
+    @one_row = Mong@collection.find_one()
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @collection }

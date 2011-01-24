@@ -1,0 +1,17 @@
+%h1 Listing analytics
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @analytics.each do |analytic|
+    %tr
+      %td= link_to 'Show', analytic
+      %td= link_to 'Edit', edit_analytic_path(analytic)
+      %td= link_to 'Destroy', analytic, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Analytic', new_analytic_path

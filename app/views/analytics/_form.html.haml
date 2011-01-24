@@ -1,0 +1,10 @@
+= form_for @analytic do |f|
+  -if @analytic.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@analytic.errors.count, "error")} prohibited this analytic from being saved:"
+      %ul
+        - @analytic.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'
