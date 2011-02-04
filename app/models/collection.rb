@@ -3,7 +3,13 @@ class Collection
   key :name, String
   key :database_id, :typecase => 'ObjectID'
   
-  one :database
+  belongs_to :database
+  
+  def mongo_col
+    
+  end
+  
+    
 # Validations :::::::::::::::::::::::::::::::::::::::::::::::::::::
 # validates_presence_of :attribute
 

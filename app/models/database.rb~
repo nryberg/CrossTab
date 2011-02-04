@@ -1,6 +1,13 @@
 class Database
   include MongoMapper::Document         
 
+  many :collections
+  
+  def db 
+    p "Name" + self.name
+    MongoMapper.connection.db(self.name)
+  end
+  
 # Validations :::::::::::::::::::::::::::::::::::::::::::::::::::::
 # validates_presence_of :attribute
 

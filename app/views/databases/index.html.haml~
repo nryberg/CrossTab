@@ -8,10 +8,7 @@
 
   - @databases.each do |database|
     %tr
-      %td= database.name
-      %td= link_to 'Show', database
-      %td= link_to 'Edit', edit_database_path(database)
-      %td= link_to 'Destroy', database, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to database.name, database
 
 %br
 

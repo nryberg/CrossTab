@@ -1,14 +1,17 @@
+
 %p#notice= notice
 %table#fields
   %tr
     %th Field
     %th Value
-  - @one_row.each do |field|
-    = content_tag_for(:tr, field) do
+  - @one_row.keys.each do |field|
+    %tr
       %td
-        %strong= field[0]
-      %td= field[1]
+        %span#draggable 
+          = field
+      %td= @one_row[field]
+%div#block Click me
+%div#draggable{:style=>"width:150px;height:150px;background-color:pink;border:1px solid #999999"} Drag Me
+%div#test Test me
+<a href="http://www.google.com" id="arg">test</a>
 
-= link_to 'Edit', edit_collection_path(@collection)
-\|
-= link_to 'Back', collections_path
