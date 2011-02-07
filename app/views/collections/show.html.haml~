@@ -1,17 +1,5 @@
-
-%p#notice= notice
-%table#fields
-  %tr
-    %th Field
-    %th Value
-  - @one_row.keys.each do |field|
-    %tr
-      %td
-        %span#draggable 
-          = field
-      %td= @one_row[field]
-%div#block Click me
-%div#draggable{:style=>"width:150px;height:150px;background-color:pink;border:1px solid #999999"} Drag Me
-%div#test Test me
-<a href="http://www.google.com">test</a>
+%div.demo
+  %div#draggable.ui-widget-content{:style=>"width:150px;height:150px;background-color:pink;border:1px solid #999999"} Drag Me
+  
+%div#droppable.ui-widget-header{:style=>"width:350px;height:350px;background-color:blue;border:1px solid #999999"} Drop me
 
