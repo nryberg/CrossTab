@@ -1,5 +1,20 @@
-%div.demo
-  %div#draggable.ui-widget-content{:style=>"width:150px;height:150px;background-color:pink;border:1px solid #999999"} Drag Me
+%div#workbench.span-24
+  %div#fields.span-4
+    %div#draggable.field one field
+    %div#draggable.field two field
+    %div#draggable.field three field
+    %div#draggable.field four
+  %div#tray.span-18
+    %div#left_try.span-9
+      %div#filters.droppable Filters
+      %div#cols.droppable Cols
+    %div#right_tray.span-9
+      %div#rows.droppable Rows 
+      %div#values.droppable Values
   
-%div#droppable.ui-widget-header{:style=>"width:350px;height:350px;background-color:blue;border:1px solid #999999"} Drop me
+/*  %div.demo
+/*    %div#draggable.ui-widget-content{:style=>"width:150px;height:150px;background-color:pink;border:1px solid #999999"} Drag Me
+  
+/*  %div#droppable.ui-widget-header{:style=>""}
+/*    %p Drop me
 

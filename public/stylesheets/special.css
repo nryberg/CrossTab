@@ -1,0 +1,55 @@
+#filters {
+  border:1px solid #999999;
+}
+
+#cols {
+  border:1px solid #999999;
+  padding-top: 5px; 
+  
+}
+
+#rows {
+  border:1px solid #999999;
+  
+}
+
+#values {
+  border:1px solid #999999;
+  padding-top: 5px; 
+  
+  
+}
+
+#tray {
+  
+}
+
+.droppable {
+  height: 300px;
+   
+}
+
+#member_background {
+  background-color: #FBFFB7;
+  
+}
+
+#agenda_background {
+  background-color: #91CC7E;
+}
+
+#club_background {
+  background-color: #DED2FF;
+}
+
+#role_background {
+  background-color: #FFFFFF;
+}
+
+#header_box {
+  font-size: 200%;
+}
+
+#content_box {
+  padding-top: 15px;
+}
