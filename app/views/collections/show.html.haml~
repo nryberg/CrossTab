@@ -4,7 +4,7 @@
     %div#draggable.field two field
     %div#draggable.field three field
     %div#draggable.field four
-  %div#tray.span-18
+  %div#tray.span-19
     %div#left_try.span-9
       %div#filters.droppable Filters
       %div#cols.droppable Cols

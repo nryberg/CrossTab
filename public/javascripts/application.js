@@ -11,12 +11,12 @@ $j(document).ready(function() {
   });
 $j(document).ready(function() {
     $j('#draggable').draggable();
-    $j( "#droppable" ).droppable({
+    $j(".droppable").droppable({
           drop: function( event, ui ) {
             $j( this )
               .addClass( "ui-state-highlight" )
               .find( "p" )
-                .html( "Dropped!" );
+                .html($j( ".ui-draggable") );
           }
       });
   });
