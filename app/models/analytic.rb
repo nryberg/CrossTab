@@ -1,7 +1,8 @@
 class Analytic
   include MongoMapper::Document         
-  key :database, String
-  key :collection, String
+  key :name, String
+  key :database_name, String
+  key :collection_name, String
   key :column, String
   key :row, String
   key :value, String

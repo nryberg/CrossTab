@@ -5,8 +5,12 @@ class Collection
   
   belongs_to :database
   
-  def mongo_col
+  def fields
     
+  end
+    
+  def mongo_collection
+    self.database.db.collection(:name)
   end
   
     

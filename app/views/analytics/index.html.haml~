@@ -8,7 +8,7 @@
 
   - @analytics.each do |analytic|
     %tr
-      %td= analytic.name
+      %td= analytic.database_name
       %td= link_to 'Show', analytic
       %td= link_to 'Edit', edit_analytic_path(analytic)
       %td= link_to 'Destroy', analytic, :confirm => 'Are you sure?', :method => :delete

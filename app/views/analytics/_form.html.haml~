@@ -26,3 +26,36 @@
   
   .actions
     = f.submit 'Save'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  %div        
+    %span.span-3= f.label :database_name
+    %span= f.text_field :database_name
+  %div
+    %span.span-3= f.label :collection_name
+    %span= f.text_field :collection_name
+  %div
+    %span.span-3= f.label :column
+    %span= f.text_field :column
+  %div
+    %span.span-3= f.label :row
+    %span= f.text_field :row
+  %div
+    %span.span-3= f.label :value
+    %span= f.text_field :value
+  
+  .actions
+    = f.submit 'Save'
