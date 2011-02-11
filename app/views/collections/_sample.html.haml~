@@ -1,0 +1,3 @@
+%tr
+  - sample.keys.each do |key| 
+    %td= sample[key]

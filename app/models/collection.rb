@@ -1,5 +1,7 @@
 class Collection
   include MongoMapper::Document         
+  attr_reader :fields, :samples
+  
   key :name, String
   key :database_id, :typecase => 'ObjectID'
   
@@ -8,12 +10,24 @@ class Collection
   def fields
     
   end
-    
-  def mongo_collection
-    self.database.db.collection(:name)
+
+  def row_count
+     _collection.count()
   end
-  
+ 
+  def fields
+    @fields = _collection.find_one.keys
+  end
     
+  def samples
+    @samples  = _collection.find({},{:limit => 5}).to_a
+  end
+    
+  private
+    def _collection
+      self.database._db.collection(self.name)
+    end
+      
 # Validations :::::::::::::::::::::::::::::::::::::::::::::::::::::
 # validates_presence_of :attribute
 

@@ -3,7 +3,7 @@ class Database
 
   many :collections
   
-  def db 
+  def _db 
     MongoMapper.connection.db(self.name)
   end
   

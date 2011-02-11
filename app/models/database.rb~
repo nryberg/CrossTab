@@ -4,7 +4,6 @@ class Database
   many :collections
   
   def db 
-    p "Name" + self.name
     MongoMapper.connection.db(self.name)
   end
   

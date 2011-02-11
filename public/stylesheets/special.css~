@@ -1,3 +1,7 @@
+#label {
+  font-weight: bold;
+}
+
 #filters {
   border:1px solid #999999;
 }
@@ -15,6 +19,7 @@
 
 #values {
   border:1px solid #999999;
+  padding-top: 5px; 
   
   
 }

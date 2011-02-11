@@ -19,7 +19,7 @@ class CollectionsController < ApplicationController
     col_name = @collection.name
     @db = @collection.database.db
     p @db
-    @one_row = @db.collection(col_name)
+    @one_row = @db.collection(col_name).find_one
     
 #     @one_row = Mong@collection.find_one()
     respond_to do |format|

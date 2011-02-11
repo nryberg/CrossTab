@@ -1,0 +1,15 @@
+%div#workbench.span-24
+  %div#fields.span-4
+    %div#draggable.field one field
+    %div#draggable.field two field
+    %div#draggable.field three field
+    %div#draggable.field four
+  %div#tray.span-19
+    %div#left_try.span-9
+      %div#filters.droppable
+        %p Filters
+      %div#cols.droppable Cols
+    %div#right_tray.span-9
+      %div#rows.droppable Rows 
+      %div#values.droppable Values
+ 

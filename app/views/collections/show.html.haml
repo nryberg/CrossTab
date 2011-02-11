@@ -1,20 +1,21 @@
 %h2= @collection.name
-%h2= @mongo_collection.name
-%div#workbench.span-24
-  %div#fields.span-4
-    %div#draggable.field one field
-    %div#draggable.field two field
-    %div#draggable.field three field
-    %div#draggable.field four
-  %div#tray.span-19
-    %div#left_try.span-9
-      %div#filters.droppable
-        %p Filters
-      %div#cols.droppable Cols
-    %div#right_tray.span-9
-      %div#rows.droppable Rows 
-      %div#values.droppable Values
-  
+%h3 Statistics
+
+%div.span-16
+  %span.label.span-4 Row Count: 
+  %span.span-4= @collection.row_count
+%div.span-16
+  %span.label.span-4 Fields
+  %span.span-4
+    %table= render :partial => "field", :collection => @collection.fields
+%div.span-16
+  %span.label.span-4 Sample Data
+  %span.span-4
+    %table
+      - @collection.fields.sort.each do |field|
+        %th= field
+      = render :partial => "sample", :collection => @collection.samples, :fields => @collection.fields.sort
+    
 /*  %div.demo
 /*    %div#draggable.ui-widget-content{:style=>"width:150px;height:150px;background-color:pink;border:1px solid #999999"} Drag Me
   
