@@ -11,19 +11,21 @@ gem 'rails', '3.0.0'
 ## Add these as defaults for new projects
 ###
 
+gem 'json', :platforms => :ruby
 gem 'mongo_mapper'
 # gem 'jnunemaker-validatable', '>= 1.8.4'
 gem 'mongomapper_ext'
-gem 'webrat'
-gem 'cucumber-rails'
-gem 'rspec'
+# gem 'webrat'
+# gem 'cucumber-rails'
+# gem 'rspec'
 gem 'haml'
 gem 'haml-rails'
-gem 'mongrel'
+# gem 'mongrel'
 # gem 'haml_scaffold'
+gem 'mongo'
 gem 'bson_ext'
 gem 'will_paginate'
-gem 'mocha'
+# gem 'mocha'
 gem 'rails3-generators'
 gem 'jquery-rails', '>=0.2.5'
 # Use unicorn as the web server

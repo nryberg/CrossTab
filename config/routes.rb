@@ -1,4 +1,5 @@
 Crosstab::Application.routes.draw do
+  match 'analytics/new_from_coll'
   resources :analytics
 
   resources :types

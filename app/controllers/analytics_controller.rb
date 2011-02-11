@@ -24,7 +24,10 @@ class AnalyticsController < ApplicationController
   def new_from_coll
     @analytic = Analytic.new
     @collection = Collection.find(params[:id])
-    
+     respond_to do |format|
+        format.html # new.html.erb
+        format.xml  { render :xml => @analytic }
+      end 
     
     
   end
