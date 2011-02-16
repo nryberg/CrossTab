@@ -1,6 +1,28 @@
 %p#notice= notice
-
-
+%div        
+  %span.span-3.label Name
+  %span= @analytic.name
+%div        
+  %span.span-3.label Database
+  %span= @analytic.database_name
+%div
+  %span.span-3.label Collection
+  %span= @analytic.collection_name
+%div
+  %span.span-3.label Column
+  %span= @analytic.column
+%div
+  %span.span-3.label Row
+  %span= @analytic.row
+%div
+  %span.span-3.label Value
+  %span= @analytic.value
+%div
+  %span.span-3.label Action
+  %span= @analytic.action
+%table
+  = render :partial => 'result', :collection => @results.to_a
+= link_to 'Execute', :action => "execute_analytic", :id => @analytic
 = link_to 'Edit', edit_analytic_path(@analytic)
 \|
 = link_to 'Back', analytics_path

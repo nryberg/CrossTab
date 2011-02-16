@@ -16,6 +16,7 @@ class CollectionsController < ApplicationController
   # GET /collections/1.xml
   def show
     @collection = Collection.find(params[:id])
+    session[:collection_id] = @collection.id
     
 #     @one_row = Mong@collection.find_one()
     respond_to do |format|

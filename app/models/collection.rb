@@ -1,4 +1,5 @@
 class Collection
+  require 'Map'
   include MongoMapper::Document         
   attr_reader :fields, :samples
   
@@ -22,7 +23,12 @@ class Collection
   def samples
     @samples  = _collection.find({},{:limit => 5}).to_a
   end
-    
+ 
+  def count_by(field)
+    mapper = Map.new(_collection)
+    return mapper.count_by(field).find()
+  end
+  
   private
     def _collection
       self.database._db.collection(self.name)

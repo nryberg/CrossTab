@@ -1,11 +1,33 @@
 class Analytic
   include MongoMapper::Document         
+  require 'Map'
   key :name, String
   key :database_name, String
   key :collection_name, String
+ 
   key :column, String
   key :row, String
   key :value, String
+  key :action, String
+  
+  validates_presence_of :name
+
+  def execute
+    _collection.count_by(self.column)
+  end
+  
+  private
+  
+  def _database
+  end
+ 
+  def _collection
+    _db = Database.where(:name => self.database_name).first
+    _collection = _db.collections.find_by_name(self.collection_name)
+  end
+  
+  
+  
 # Validations :::::::::::::::::::::::::::::::::::::::::::::::::::::
 # validates_presence_of :attribute
 

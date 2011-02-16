@@ -21,10 +21,21 @@ class AnalyticsController < ApplicationController
     end
   end
 
+  def new_from_coll
+    @analytic = Analytic.new
+    @collection = Collection.find(session[:id])
+     respond_to do |format|
+        format.html # new.html.erb
+        format.xml  { render :xml => @analytic }
+      end 
+    
+    
+  end
   # GET /analytics/new
   # GET /analytics/new.xml
   def new
     @analytic = Analytic.new
+    
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,6 +1,12 @@
 class AnalyticsController < ApplicationController
   # GET /analytics
   # GET /analytics.xml
+  
+  def execute_analytic
+    @analytic = Analytic.find(params[:id])
+    @results = @analytic.execute
+    render :action => "show"
+  end
   def index
     @analytics = Analytic.all
 
@@ -23,9 +29,14 @@ class AnalyticsController < ApplicationController
 
   def new_from_coll
     @analytic = Analytic.new
-    @collection = Collection.find(params[:id])
+    @collection = Collection.find(session[:collection_id])
+    @analytic.database_name = @collection.database.name
+    @analytic.collection_name = @collection.name
+    @fields = @collection.fields.unshift("(none)")
+    @actions = ["count", "total", "max", "mix", "average"]
+    
      respond_to do |format|
-        format.html # new.html.erb
+        format.html { render :action => "new" }# new.html.erb
         format.xml  { render :xml => @analytic }
       end 
     
@@ -46,6 +57,10 @@ class AnalyticsController < ApplicationController
   # GET /analytics/1/edit
   def edit
     @analytic = Analytic.find(params[:id])
+    @collection = Collection.where(:name => @analytic.collection_name).first
+    @fields = @collection.fields.unshift("(none)")
+    
+    @actions = ["count", "total", "max", "mix", "average"]
   end
 
   # POST /analytics
@@ -70,7 +85,7 @@ class AnalyticsController < ApplicationController
     @analytic = Analytic.find(params[:id])
 
     respond_to do |format|
-      if @analytic.update(params[:analytic])
+      if @analytic.update_attributes(params[:analytic])
         format.html { redirect_to(@analytic, :notice => 'Analytic was successfully updated.') }
         format.xml  { head :ok }
       else

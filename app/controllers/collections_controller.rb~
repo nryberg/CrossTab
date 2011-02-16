@@ -16,10 +16,6 @@ class CollectionsController < ApplicationController
   # GET /collections/1.xml
   def show
     @collection = Collection.find(params[:id])
-    col_name = @collection.name
-    @db = @collection.database.db
-    p @db
-    @one_row = @db.collection(col_name).find_one
     
 #     @one_row = Mong@collection.find_one()
     respond_to do |format|
