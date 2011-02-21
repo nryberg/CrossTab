@@ -26,6 +26,7 @@ class Collection
  
   def count_by(field)
     mapper = Map.new(_collection)
+
     return mapper.count_by(field).find()
   end
   

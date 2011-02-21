@@ -6,10 +6,9 @@ class Map
   end
   
   def count_by(item)
-    m = "function(){
-        emit(this.ITEM.toLowerCase(), 1);
-        }"
+    m = "function(){emit(this.ITEM, 1);}"
     m.gsub!("ITEM", item)
+    p m
     r = reduce_count
     @collection.map_reduce(m,r)
     
@@ -87,13 +86,7 @@ class Map
     
   
   def reduce_count()
-     r = "function(k, vals){
-       var sum = 0;
-       vals.forEach(function(val) {
-         sum += val;
-         });
-       return sum;
-       };"
+    r = "function(k, vals){ var sum = 0; vals.forEach(function(val) { sum += val; }); return sum; };"
   end
     
   def variance(population)
