@@ -13,7 +13,11 @@ class Analytic
   validates_presence_of :name
 
   def execute
-    _collection.count_by(self.column)
+    if not self.row.nil? and not self.column.nil? then
+      _collection.group_by_count(self.row, self.column)
+    elsif not self.row.nil? then
+      _collection.count_by(self.row)
+    end
   end
   
   private

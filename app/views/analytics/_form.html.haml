@@ -16,16 +16,16 @@
     %span= f.text_field :collection_name
   %div
     %span.span-3= f.label :column
-    %span= f.select(:column, options_for_select(@fields))
+    %span= f.select(:column, options_for_select(@fields, @analytic.column))
   %div
     %span.span-3= f.label :row
-    %span= f.select(:row, options_for_select(@fields))
+    %span= f.select(:row, options_for_select(@fields, @analytic.row))
   %div
     %span.span-3= f.label :value
-    %span= f.select(:value, options_for_select(@fields)) 
+    %span= f.select(:value, options_for_select(@fields, @analytic.value)) 
   %div
     %span.span-3= f.label :action
-    %span= f.select(:action, options_for_select(@actions)) 
+    %span= f.select(:action, options_for_select(@actions, @analytic.action)) 
   
   .actions
     = f.submit 'Save'
