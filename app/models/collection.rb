@@ -29,6 +29,12 @@ class Collection
 
     return mapper.count_by(field).find()
   end
+ 
+  def group_by_count(field1,field2)
+    mapper = Map.new(_collection)
+
+    return mapper.group_by_count(field1, field2).find()
+  end
   
   private
     def _collection
