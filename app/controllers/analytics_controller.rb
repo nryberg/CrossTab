@@ -4,7 +4,8 @@ class AnalyticsController < ApplicationController
   
   def execute_analytic
     @analytic = Analytic.find(params[:id])
-    @results = @analytic.execute
+    @mapped = @analytic.execute
+    
     render :action => "show"
   end
   def index

@@ -1,5 +1,7 @@
 class Analytic
-  include MongoMapper::Document         
+  include MongoMapper::Document        
+  attr_reader :mapped
+  
   require 'Map'
   key :name, String
   key :database_name, String
@@ -12,11 +14,17 @@ class Analytic
   
   validates_presence_of :name
 
+  #TODO: Fix this hinky stuff.  Shouldn't be this difficult to figure 
+  # out what kind of crosstab you're running.  Maybe make the 2x default
+  # and fill in the missing value with?
+  
   def execute
     if not self.row.nil? and not self.column.nil? then
-      _collection.group_by_count(self.row, self.column)
+      p "double"
+      @mapped = _collection.group_by_count(self.row, self.column)
+      
     elsif not self.row.nil? then
-      _collection.count_by(self.row)
+      @table = _collection.count_by(self.row)
     end
   end
   

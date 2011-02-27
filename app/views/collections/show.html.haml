@@ -16,6 +16,7 @@
         %th= field
       = render :partial => "sample", :collection => @collection.samples, :fields => @collection.fields.sort
 
+= link_to "Analytics", analytics_path
 = link_to "New Analytic", :controller => "analytics", :action => "new_from_coll"
 /*  %div.demo
 /*    %div#draggable.ui-widget-content{:style=>"width:150px;height:150px;background-color:pink;border:1px solid #999999"} Drag Me

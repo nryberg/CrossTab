@@ -16,7 +16,7 @@ Crosstab::Application.routes.draw do
 
   resources :sources
 
-  root :to => "data#index"
+  root :to => "databases#index"
   resources :tuples
 
 

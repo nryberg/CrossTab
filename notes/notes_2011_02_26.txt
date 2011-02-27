@@ -1,0 +1,5 @@
+2/26/2011 11:06 PM
+
+Very late - but getting there with there with the way the pieces are starting to fit together.  For the crosstab, it's so very close.  The data is still laid out in a collection that doesn't quite fit my mental model of a cross tab.  Need to reconnect to the rows/columns thing, and that got a little lost in the connection to Rails. 
+
+Too many layers going on right now - it's very confusing.  Hard to debug.  Need to really hammer home the black box quality of objects, but still need to pass up things like columns.  Aack.

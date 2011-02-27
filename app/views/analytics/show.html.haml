@@ -20,6 +20,8 @@
 %div
   %span.span-3.label Action
   %span= @analytic.action
+- @columns.each do |col|
+  %p= col
 %table
   = render :partial => 'result', :collection => @results.to_a
 = link_to 'Execute', :action => "execute_analytic", :id => @analytic
